@@ -1,6 +1,6 @@
-# My own visual studio code customization
+# My Visual Studio Code Customization
 
-This guide will help you customize the appearance of Visual Studio Code using the **Custom CSS and JS Loader** extension.
+This guide will help you customize the appearance of Visual Studio Code with a beautiful setup featuring the Catppuccin theme, custom fonts, and personalized CSS/JS modifications.
 
 ---
 
@@ -8,51 +8,145 @@ This guide will help you customize the appearance of Visual Studio Code using th
 
 ---
 
-### Extensions:
+## Prerequisites
 
-- [Github Theme](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
-- [JetBrains Icon Theme](https://marketplace.visualstudio.com/items?itemName=chadalen.vscode-jetbrains-icon-theme)
+### Required Extensions:
+
+- [Catppuccin Theme](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc)
+- [Catppuccin Icons](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc-icons)
 - [Fluent Icons](https://marketplace.visualstudio.com/items?itemName=miguelsolorio.fluent-icons)
 - [Custom CSS and JS Loader](https://marketplace.visualstudio.com/items?itemName=be5invis.vscode-custom-css)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+### Required Fonts:
+
+This setup uses the following fonts (all included in the `fonts/` directory):
+
+- **Fira Code** - Main editor font with ligatures support
+- **Hack Nerd Font** - Fallback font with icon support
+- **MesloLGS NF** - Terminal font with powerline symbols
 
 ---
 
-### Instructions:
+## Installation Instructions
 
-1. **Install the Extensions**
+### 1. Install Fonts
 
-   - Install all of the extensions listed above by searching for them in the VS Code Marketplace.
+Install all fonts from the `fonts/` directory:
 
-2. **Modify `settings.json`**
+**Windows:**
 
-   - Add the following configuration to your VS Code `settings.json` file. Before proceeding, it's highly recommended to create a backup of your current settings to prevent any unintended overwrites.
+- Navigate to the `fonts/` folder
+- Right-click each `.ttf` or `.otf` file and select "Install" or "Install for all users"
 
-3. **Add the following configuration**:
+**macOS:**
 
-   ```jsonc
-   "vscode_custom_css.imports": [
-       // Absolute file paths for your custom CSS/JS files
-       // For Mac or Linux:
-       // "file:///Users/[your-username]/[path-of-custom-css]/vscode-custom/style.css",
-       // "file:///Users/[your-username]/[path-of-custom-css]/vscode-custom/script.js"
+- Open Font Book
+- Drag and drop all font files from the `fonts/` folder
 
-       // For Windows:
-       // "file:///C:/[path-of-custom-css]/vscode-custom/style.css",
-       // "file:///C:/[path-of-custom-css]/vscode-custom/script.js"
-   ]
-   ```
+**Linux:**
 
-4. **Enable "Custom CSS and JS Loader"**
+- Copy font files to `~/.local/share/fonts/` or `/usr/share/fonts/`
+- Run `fc-cache -f -v` to refresh font cache
 
-   - Open the command palette (`Ctrl+Shift+P or Cmd+Shift+P`) and in the Command Palette, type **"Enable Custom CSS and JS"** to activate the customizations.
+### 2. Install Extensions
 
-5. **Customize the CSS or JS**
+Install all required extensions listed above from the VS Code Marketplace.
 
-   - Modify the CSS or JS files to customize the appearance of Visual Studio Code according to your preferences. Experiment with various aspects of the VS Code interface that you wish to personalize.
+### 3. Set Up Custom CSS/JS Files
 
-6. **Reload the Extension**
-   - After modifying your CSS or JS files, reload the extension by selecting **"Reload Custom CSS and JS"** from the command palette.
+Copy the `vscode-custom` folder to your home directory:
+
+**Windows:**
+
+```bash
+# Copy to C:\Users\[YourUsername]\.vscode\
+xcopy /E /I vscode-custom C:\Users\%USERNAME%\.vscode\vscode-custom
+```
+
+**macOS/Linux:**
+
+```bash
+# Copy to ~/.vscode/
+cp -r vscode-custom ~/.vscode/
+```
+
+### 4. Apply Settings
+
+**Option A: Full Settings (Recommended)**
+
+- Backup your current `settings.json` file
+- Copy the entire `settings.json` from this repository to your VS Code settings
+- Update the `vscode_custom_css.imports` paths to match your system
+
+**Option B: Merge Settings**
+
+- Open your VS Code `settings.json` (Ctrl+Shift+P → "Preferences: Open Settings (JSON)")
+- Manually merge the settings from this repository with your existing configuration
+
+**Important:** Update the custom CSS paths in `settings.json` to match your system:
+
+```jsonc
+"vscode_custom_css.imports": [
+  // Windows:
+  "file:///C:/Users/[YourUsername]/.vscode/vscode-custom/style.css",
+  "file:///C:/Users/[YourUsername]/.vscode/vscode-custom/script.js",
+
+  // macOS/Linux:
+  // "file:///Users/[YourUsername]/.vscode/vscode-custom/style.css",
+  // "file:///Users/[YourUsername]/.vscode/vscode-custom/script.js"
+]
+```
+
+### 5. Enable Custom CSS and JS
+
+- Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`)
+- Type and select **"Enable Custom CSS and JS"**
+- Restart VS Code when prompted
+
+### 6. Customize (Optional)
+
+Feel free to modify the CSS or JS files in the `vscode-custom` folder to personalize your setup further. After making changes:
+
+- Open Command Palette
+- Select **"Reload Custom CSS and JS"**
+- Restart VS Code
 
 ---
 
-Happy customizing! Make Visual Studio Code truly your own.
+## Features
+
+✨ **Theme:** Catppuccin Mocha - A soothing pastel theme  
+🎨 **Icons:** Catppuccin Icons + Fluent Product Icons  
+🔤 **Fonts:** Fira Code with ligatures, Hack Nerd Font, MesloLGS NF  
+⚡ **Performance:** Optimized settings for smooth editing experience  
+🎯 **UI:** Minimal distractions - no minimap, single tab, hidden breadcrumbs  
+🖱️ **Cursor:** Smooth underline cursor with phase blinking animation  
+💾 **Auto-save:** Enabled with delay  
+🔒 **Privacy:** Telemetry disabled
+
+---
+
+## Troubleshooting
+
+**Custom CSS not loading?**
+
+- Make sure file paths in `settings.json` use absolute paths
+- On Windows, use forward slashes: `file:///C:/Users/...`
+- Run "Enable Custom CSS and JS" from Command Palette
+- Restart VS Code completely
+
+**Fonts not showing?**
+
+- Verify fonts are installed system-wide
+- Restart VS Code after installing fonts
+- Check font names match exactly in settings
+
+**Permission issues on macOS/Linux?**
+
+- You may need to grant VS Code permission to modify itself
+- See Custom CSS and JS Loader documentation for details
+
+---
+
+Happy customizing! Make Visual Studio Code truly your own. 🚀

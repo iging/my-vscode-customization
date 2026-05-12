@@ -5,14 +5,14 @@
     "inlineparameters.annotationForeground": "#7b82af",
     "scrollbar.shadow": "#24292e00"
   },
-  "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-dark",
+  "workbench.iconTheme": "catppuccin-mocha",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.editorLargeFileConfirmation": 10024,
   "workbench.layoutControl.enabled": false,
   "workbench.editor.showTabs": "single",
   "workbench.tree.indent": 16,
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Andromeda",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.editor.empty.hint": "hidden",
 
   /** ------------ Breadcrumbs Configurations ------------ **/
@@ -48,9 +48,15 @@
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.fontFamily": "'MesloLGS NF', 'Hack Nerd Font', Monospace",
   "terminal.integrated.fontSize": 14,
-  "terminal.integrated.enableMultiLinePasteWarning": "always",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.cursorStyle": "underline",
   "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.suggest.quickSuggestions": {
+    "commands": "on",
+    "arguments": "on",
+    "unknown": "off"
+  },
+  "terminal.integrated.suggest.suggestOnTriggerCharacters": true,
 
   /** ------------ Additional Configurations ------------ **/
   "vscode_custom_css.imports": [
@@ -58,5 +64,10 @@
     "file://C:/Users/Miguel/.vscode/vscode-custom/script.js",
     "file:///c:/Users/Miguel/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
   ],
-  "files.autoSave": "afterDelay"
+  "files.autoSave": "afterDelay",
+  "explorer.compactFolders": false,
+  "telemetry.telemetryLevel": "off",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
 }
