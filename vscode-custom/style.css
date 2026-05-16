@@ -62,7 +62,7 @@ li.action-item.icon:hover {
 }
 
 li.action-item.icon.checked:hover .codicon:before {
-  color: var(--vscode-activityBar-activeBorder) !important;
+  color: var(--vscode-activityBar-foreground) !important;
 }
 
 li.action-item.icon.checked {
@@ -70,7 +70,7 @@ li.action-item.icon.checked {
 }
 
 li.action-item.icon.checked a.action-label.codicon {
-  color: var(--vscode-activityBar-activeBorder) !important;
+  color: var(--vscode-activityBar-foreground) !important;
   border-radius: 12px !important;
 }
 
