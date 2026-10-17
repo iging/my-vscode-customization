@@ -14,9 +14,6 @@
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.editor.empty.hint": "hidden",
-
-  /** ------------ Breadcrumbs Configurations ------------ **/
-  "breadcrumbs.enabled": false,
   "breadcrumbs.symbolPath": "off",
   "breadcrumbs.filePath": "on",
 
@@ -51,23 +48,54 @@
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.cursorStyle": "underline",
   "terminal.integrated.cursorBlinking": true,
+
+  /** ------------ Additional Configurations ------------ **/
+  "vscode_custom_css.imports": [
+    "file://C:/Users/username/.vscode/vscode-custom/style.css",
+    "file://C:/Users/username/.vscode/vscode-custom/script.js"
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "files.autoSave": "afterDelay",
+  "telemetry.telemetryLevel": "off",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "chat.agent.maxRequests": 1e23,
+  "chat.mcp.serverSampling": {
+    "Global in Code: supabase": {
+      "allowedModels": ["copilot/auto"]
+    }
+  },
+  "claudeCode.preferredLocation": "panel",
+  "chat.viewSessions.orientation": "stacked",
+  "explorer.compactFolders": false,
   "terminal.integrated.suggest.quickSuggestions": {
     "commands": "on",
     "arguments": "on",
     "unknown": "off"
   },
   "terminal.integrated.suggest.suggestOnTriggerCharacters": true,
-
-  /** ------------ Additional Configurations ------------ **/
-  "vscode_custom_css.imports": [
-    "file://C:/Users/Miguel/.vscode/vscode-custom/style.css",
-    "file://C:/Users/Miguel/.vscode/vscode-custom/script.js",
-    "file:///c:/Users/Miguel/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+  "js/ts.experimental.useTsgo": true,
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
   ],
-  "files.autoSave": "afterDelay",
-  "explorer.compactFolders": false,
-  "telemetry.telemetryLevel": "off",
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  }
+  "terminal.integrated.initialHint": false,
+  "json.schemaDownload.trustedDomains": {
+    "https://opencode.ai/": true,
+    "https://models.dev/": true
+  },
+  "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+  "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+  "claudeCode.hideOnboarding": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.donotShowInfoMsg": true
 }
