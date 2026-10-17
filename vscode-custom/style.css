@@ -260,7 +260,18 @@
   > .content
   .editor-group-container
   .editor-group-watermark {
+  width: 100% !important;
+  height: 100% !important;
   max-width: 100% !important;
+}
+
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  .editor-group-watermark
+  .watermark-container {
+  height: 100% !important;
 }
 
 .monaco-workbench
@@ -273,7 +284,11 @@
   background-repeat: no-repeat !important;
   background-position: center center !important;
   background-size: contain !important;
-  max-width: 75%;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  aspect-ratio: auto !important;
 }
 
 .monaco-workbench
