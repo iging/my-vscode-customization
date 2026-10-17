@@ -51,8 +51,9 @@
 
   /** ------------ Additional Configurations ------------ **/
   "vscode_custom_css.imports": [
-    "file://C:/Users/username/.vscode/vscode-custom/style.css",
-    "file://C:/Users/username/.vscode/vscode-custom/script.js"
+    // Replace YOUR_USERNAME with your operating system username.
+    "file:///C:/Users/YOUR_USERNAME/.vscode/vscode-custom/style.css",
+    "file:///C:/Users/YOUR_USERNAME/.vscode/vscode-custom/script.js"
   ],
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
